@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="Multistep.css">
+     <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Multistep Form</title>
+</head>
+<body>
+     <div class="main-wrapper">
+     	<form id="frm" onsubmit="return myform()" method="POST" action="multistep.php">
+     	<div class="steps-wrapper">
+     		
+     		<div class="step" id="step1">
+     			<h2>Multistep Form Step 1</h2><hr><br><br>
+     			<input type="text" name="name" id="name" placeholder="Name"><br><br>
+     			<input type="text" name="mobile" id="mobile" placeholder="Mobile"><br><br>
+     			<input type="text" name="email" id="email" placeholder="Email"><br><br><br><br>
+     			<button type="button" class="next" id="next1">Next</button>	
+     		</div>
+     		<div class="step" id="step2">
+     			<h2>Multistep Form Step 2</h2><hr><br><br>
+                    <input type="text" name="city" id="city" placeholder="City"><br><br>
+                    <input type="text" name="income" id="income" placeholder="Income"><br><br>
+                    <input type="text" name="age" id="age" placeholder="D.O.B"><br><br>
+     			<button type="button" class="back">Back</button>
+     			<button type="button" class="next" id="next2">Next</button>	
+     		</div>
+     		<div class="step" id="step3">
+     			<h2>Multistep Form Step 3</h2><hr>
+                    <h3>Select Your Gender</h3>
+                    <input type="radio" name="gender" id="gender" value="male">
+                    <label for="gender">Male</label><br><br>
+                    <input type="radio" name="gender" id="gender" value="Female">
+                    <label for="gender">Female</label><br>
+                    <h3>Select Your Martial Status</h3>
+                    <input type="radio" name="Martialstatus" id="Martialstatus" value="married">
+                    <label for="Martialstatus">Married</label>
+                    <input type="radio" name="Martialstatus" id="Martialstatus" value="Unmarried">
+                    <label for="Martialstatus">Unmarried</label><br><br>
+     			<button type="button" class="back">Back</button>	
+     			<button type="submit" class="next" id="next3">submit</button>
+     		</div>
+     	</div>
+     	</form>
+
+     </div>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="jquery-3.6.0.min"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="Multistep.js"></script>
+    <script src="jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="jquery-validation/src/additional/nowhitespace.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script type="text/javascript">
+         $(".next").click(function(){
+     console.log("Next button clicked");
+     var scrollwidth= $(".step").width();
+     var wrapperPos = $(".steps-wrapper").scrollLeft();
+     console.log("scroll width: "+scrollwidth+" scroll Pos: "+wrapperPos);
+     $(".steps-wrapper").animate({
+          scrollLeft:wrapperPos + scrollwidth
+     },200);
+})
+
+$(".back").click(function(){
+     console.log("Back button clicked");
+     var scrollwidth= $(".step").width();
+     var wrapperPos = $(".steps-wrapper").scrollLeft();
+     console.log("scroll width: "+scrollwidth+" scroll Pos: "+wrapperPos);
+     $(".steps-wrapper").animate({
+          scrollLeft:wrapperPos - scrollwidth
+     },200);
+})
+
+    </script>
+</body>
+</html>
