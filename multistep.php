@@ -14,7 +14,7 @@
   $city= $_POST['city'];
   $income= $_POST['income'];
   $age= $_POST['age'];
-  $yourgender= $_POST['gender'];
+  $gender= $_POST['gender'];
   $maritalstatus= $_POST['maritalstatus'];
 
   $sql="INSERT INTO multistep_form (name,mobile,email,city,income,age,gender,maritalstatus) VALUE ('$name','$mobile','$email','$city','$income','$age','$gender','$maritalstatus')";
