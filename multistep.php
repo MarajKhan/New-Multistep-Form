@@ -15,9 +15,9 @@
   $income= $_POST['income'];
   $age= $_POST['age'];
   $gender= $_POST['gender'];
-  $maritalstatus= $_POST['maritalstatus'];
+  $Marital= $_POST['Marital'];
 
-  $sql="INSERT INTO multistep_form (name,mobile,email,city,income,age,gender,maritalstatus) VALUE ('$name','$mobile','$email','$city','$income','$age','$gender','$maritalstatus')";
+  $sql="INSERT INTO multistep_form (name,mobile,email,city,income,age,gender,Marital) VALUE ('$name','$mobile','$email','$city','$income','$age','$gender','$Marital')";
   if ($conn->query($sql)==true) {
   	echo "new record added";
   }
